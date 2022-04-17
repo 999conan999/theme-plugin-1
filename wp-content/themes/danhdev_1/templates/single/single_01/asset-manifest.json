@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wp-content/themes/danhdev_1/templates/single/single_01/static/css/main.5225b46f.css",
+    "main.js": "/wp-content/themes/danhdev_1/templates/single/single_01/static/js/main.9639e67c.js",
+    "index.html": "/wp-content/themes/danhdev_1/templates/single/single_01/index.html",
+    "main.5225b46f.css.map": "/wp-content/themes/danhdev_1/templates/single/single_01/static/css/main.5225b46f.css.map",
+    "main.9639e67c.js.map": "/wp-content/themes/danhdev_1/templates/single/single_01/static/js/main.9639e67c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5225b46f.css",
+    "static/js/main.9639e67c.js"
+  ]
+}
