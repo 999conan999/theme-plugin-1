@@ -7,9 +7,9 @@ function get_all_contact($data_search,$quantity,$offset){// search phone or emai
    global $wpdb;
    $table_prefix=$wpdb->prefix .'contacts_form';
    if($data_search==''){
-        $sql = $wpdb->prepare( "SELECT id,namez,phonez,addressz,cityz,orderz,genderz,costz,emailz,typez,datez,dataz FROM $table_prefix ORDER BY datez DESC LIMIT %d OFFSET %d ",$quantity,$offset);
+        $sql = $wpdb->prepare( "SELECT id,namez,phonez,addressz,cityz,orderz,genderz,costz,emailz,typez,datez,dataz FROM $table_prefix WHERE typez='theme' ORDER BY datez DESC LIMIT %d OFFSET %d ",$quantity,$offset);
    }else{
-        $sql = $wpdb->prepare( "SELECT id,namez,phonez,addressz,cityz,orderz,genderz,costz,emailz,typez,datez,dataz FROM $table_prefix WHERE phone LIKE %s OR email LIKE %s ORDER BY datez DESC LIMIT %d OFFSET %d ",'%'.$data_search.'%','%'.$data_search.'%',$quantity,$offset);
+        $sql = $wpdb->prepare( "SELECT id,namez,phonez,addressz,cityz,orderz,genderz,costz,emailz,typez,datez,dataz FROM $table_prefix WHERE typez='theme' AND  phone LIKE %s OR email LIKE %s ORDER BY datez DESC LIMIT %d OFFSET %d ",'%'.$data_search.'%','%'.$data_search.'%',$quantity,$offset);
    }
    $results = $wpdb->get_results( $sql , OBJECT );
    return($results);

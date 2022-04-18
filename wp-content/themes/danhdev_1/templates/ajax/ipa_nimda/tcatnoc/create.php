@@ -28,7 +28,7 @@ function create_form($namez,$phonez,$addressz,$cityz,$orderz,$genderz,$costz,$em
     $object->status=false;
     if(isset($_POST['data'])){
         $data=stripslashes(strip_tags($_POST['data']));
-        create_form('','','','','','','','','',$data);
+        create_form('','','','','','','','','theme',$data);
         $object->status=true;
     }
     send($object);
