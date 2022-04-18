@@ -55,4 +55,12 @@ function test_plugin_setup_menu(){
 function test_init(){
     echo "<h1>Hello World!</h1>";
 }
+
+if (!function_exists('send')) {
+    function send($data){
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Content-type: application/json');
+        echo json_encode($data);
+    }
+}
 ?>
