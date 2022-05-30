@@ -24,12 +24,19 @@ function create_form($namez,$phonez,$addressz,$cityz,$orderz,$genderz,$costz,$em
         $data
     );
 }
+
     $object = new stdClass();
     $object->status=false;
     if(isset($_POST['data'])){
-        $data=stripslashes(strip_tags($_POST['data']));
-        create_form('','','','','','','','','plugin',$data);
-        $object->status=true;
+        $data=json_decode(stripslashes(strip_tags($_POST['data'])));
+        if(isset($data->user->z_name)&&isset($data->user->z_phone)&&isset($data->user->z_address)){
+            create_form($data->user->z_name,$data->user->z_phone,$data->user->z_address,'',json_encode($data->sp),'','','','plugin','');
+            $object->status=true;
+        }else{
+            $object->status=false;
+        }
     }
     send($object);
+
+
 ?>

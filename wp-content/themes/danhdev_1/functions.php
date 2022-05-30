@@ -9,12 +9,13 @@
 /**
  * Add a page to the dashboard menu.
  */
-function send($data){
-    header('Cache-Control: no-cache, must-revalidate');
-    header('Content-type: application/json');
-    echo json_encode($data);
+if (!function_exists('send')) {
+    function send($data){
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Content-type: application/json');
+        echo json_encode($data);
+    }
 }
-
 
 
 global $wp_roles; 
