@@ -1,7 +1,9 @@
 <?php 
     $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
     require_once( $parse_uri[0] . 'wp-load.php' );
-
+    if (!function_exists('is_plugin_active')) {
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+       }
     
 function update_plugin_setup($keyz,$valuez){
     $is_created_keyz=check_keyz_is_create($keyz);
@@ -61,14 +63,13 @@ function check_keyz_is_create($keyz){
     return false;
 }
 
-if(true){//[todo]
-    $id_user=6;
-    $permisstion_type="editor";
-// if(is_user_logged_in()){
-//     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
-//
-        if($permisstion_type=="administrator"||$permisstion_type=="editor"){
+if(is_plugin_active('zsharevn-landing-page/index.php')){
+
+    if(is_user_logged_in()){
+        $user = wp_get_current_user();
+        $permisstion_type=$user->roles[0];
+
+        if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
             if($_POST){
                 $keyz=stripslashes($_POST['keyz']);
                 $valuez =stripslashes($_POST['valuez']);
@@ -91,7 +92,7 @@ if(true){//[todo]
         $object->status=false;
         send($object);
     }
-
+}
 
 
 

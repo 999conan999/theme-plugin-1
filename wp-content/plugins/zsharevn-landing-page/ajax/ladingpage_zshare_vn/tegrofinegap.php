@@ -1,7 +1,9 @@
 <?php
 $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' );	// global $wpdb;
-
+if (!function_exists('is_plugin_active')) {
+    include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+   }
 function get_infor_page($id){
     global $wpdb;
     // get infor posst : ID, post_Date, title, content, *url post, status, meta-all
@@ -24,42 +26,41 @@ function get_infor_page($id){
 }
 $object= new stdClass();
 
+if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-if(true){//[todo]
-    $id_user=6;
-    $permisstion_type="editor";
-// if(is_user_logged_in()){
-//     $id_user=get_current_user_id();
-//     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
-    //
-    if($permisstion_type=="administrator"||$permisstion_type=="editor"){
-        if($_GET){
-            if(isset($_GET['idN'])){
-                $idN=abs((int)stripslashes(strip_tags( $_GET['idN'])));
-                if(get_post_status($idN)){
-                    //
-                    $data_page=get_infor_page($idN);
-                    $object->id=$data_page->ID;
-                    $object->thumnail_url=$data_page->thumnail_url;
-                    $object->title_post=$data_page->post_title;
-                    $object->content_post=$data_page->post_content;
-                    $object->status=$data_page->post_status;
-                    $object->metaA=$data_page->meta_data;
-                    send($object);
+    if(is_user_logged_in()){
+        $id_user=get_current_user_id();
+        $user = wp_get_current_user();
+        $permisstion_type=$user->roles[0];
+        //
+        if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
+            if($_GET){
+                if(isset($_GET['idN'])){
+                    $idN=abs((int)stripslashes(strip_tags( $_GET['idN'])));
+                    if(get_post_status($idN)){
+                        //
+                        $data_page=get_infor_page($idN);
+                        $object->id=$data_page->ID;
+                        $object->thumnail_url=$data_page->thumnail_url;
+                        $object->title_post=$data_page->post_title;
+                        $object->content_post=$data_page->post_content;
+                        $object->status=$data_page->post_status;
+                        $object->metaA=$data_page->meta_data;
+                        send($object);
+                    }else{
+                        send(null);
+                    }
                 }else{
                     send(null);
-                 }
+                }
             }else{
                 send(null);
-             }
+            }
         }else{
             send(null);
-         }
+        }
     }else{
         send(null);
-     }
-}else{
-    send(null);
     }
+}
 ?>

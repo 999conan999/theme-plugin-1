@@ -1,7 +1,9 @@
 <?php 
     $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
     require_once( $parse_uri[0] . 'wp-load.php' );
-
+    if (!function_exists('is_plugin_active')) {
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+       }
     
 function create_form($namez,$phonez,$addressz,$cityz,$orderz,$genderz,$costz,$emailz,$typez,$dataz){
     $data = array(
@@ -48,7 +50,7 @@ if (!function_exists('telegram')) {
     }
 }
 
-
+if(is_plugin_active('zsharevn-landing-page/index.php')){
     $object = new stdClass();
     $object->status=false;
     if(isset($_POST['data'])){
@@ -84,7 +86,7 @@ if (!function_exists('telegram')) {
         }
     }
     send($object);
- 
+}
     
 
 ?>

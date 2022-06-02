@@ -2,7 +2,9 @@
 
 $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
 require_once( $parse_uri[0] . 'wp-load.php' );	// global $wpdb;
-
+if (!function_exists('is_plugin_active')) {
+    include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+   }
 
 // get all page
 function get_all_page(){
@@ -20,21 +22,22 @@ function get_all_page(){
     }
     return($results);
 }
-if(true){//[todo]
-    $id_user=6;
-    $permisstion_type="editor";
-// if(is_user_logged_in()){
-//     $id_user=get_current_user_id();
-//     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
-    if($permisstion_type=="administrator"||$permisstion_type=="editor"){
-        send(get_all_page());
+
+if(is_plugin_active('zsharevn-landing-page/index.php')){
+
+    if(is_user_logged_in()){
+        $id_user=get_current_user_id();
+        $user = wp_get_current_user();
+        $permisstion_type=$user->roles[0];
+        if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
+            send(get_all_page());
+        }else{
+            send(array());
+        }
     }else{
         send(array());
-     }
-}else{
-    send(array());
- }
+    }
+}
  
  
  

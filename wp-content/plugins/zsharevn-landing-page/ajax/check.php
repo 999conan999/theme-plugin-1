@@ -1,7 +1,9 @@
 <?php 
     $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
     require_once( $parse_uri[0] . 'wp-load.php' );
-
+    if (!function_exists('is_plugin_active')) {
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+       }
     function is_table_created($name_table){
         global $wpdb;
         $query = $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $name_table ) );
@@ -49,33 +51,16 @@
 
     $name_table_1 = $wpdb->prefix . 'data_theme';
     $name_table_3 = $wpdb->prefix . 'contacts_form';
-    // $notify=0;
-    // $contact_count_pre=0;
-    // $coun_contact_now=0;
-    $permisstion_type='null';
-    // if(is_user_logged_in()){
-        // $user = wp_get_current_user();
-        // $permisstion_type=$user->roles[0]; //[todo]
-        if(true){
-        $permisstion_type="editor";
-        //
+if(is_plugin_active('zsharevn-landing-page/index.php')){
+
+    if(is_user_logged_in()){
+        $user = wp_get_current_user();
+        $permisstion_type=$user->roles[0];
         if(!is_table_created($name_table_1)) create_data_theme_setup($name_table_1);
         if(!is_table_created($name_table_3)) create_contact_form($name_table_3);
-        // $contact_count_pre=(int)get_data_theme_contact_count('contact_count_plugin',$name_table_1);
-        // $coun_contact_now= count_contact($name_table_3);
-        
-        // if($contact_count_pre==0) {
-        //     $notify=$coun_contact_now;
-        // }else{
-        //     $notify=$coun_contact_now-$contact_count_pre;
-        // };
-
     }
     $object = new stdClass();
     $object->permission_type=$permisstion_type;
-    // $object->notify=$notify;
-    // $object->contact_count_pre=$contact_count_pre;
-    // $object->coun_contact_now=$coun_contact_now;
     send($object);
-
+}
 ?>

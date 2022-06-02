@@ -1,6 +1,9 @@
 <?php 
     $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
     require_once( $parse_uri[0] . 'wp-load.php' );
+    if (!function_exists('is_plugin_active')) {
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+       }
     //**** */ kiểm tra login ở đây
     // var_dump(is_user_logged_in());
 
@@ -54,31 +57,29 @@
         }
         return $arr_result;
     }
+if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-if(true){//[todo]
-    $id_user=6;
-    $permisstion_type="editor";
-// if(is_user_logged_in()){
-//     $id_user=get_current_user_id();
-//     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
+    if(is_user_logged_in()){
+        $id_user=get_current_user_id();
+        $user = wp_get_current_user();
+        $permisstion_type=$user->roles[0];
 
-    if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
-        if(count($_FILES)>0){
-            $result=uploade_core($_FILES,'',false);
-            send($result);
+        if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
+            if(count($_FILES)>0){
+                $result=uploade_core($_FILES,'',false);
+                send($result);
+            }else{
+                send(array());
+            }
         }else{
             send(array());
         }
+
     }else{
         send(array());
     }
-
-}else{
-    send(array());
 }
-
-
+?>
 
 
 

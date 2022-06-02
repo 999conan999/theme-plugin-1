@@ -1,6 +1,9 @@
 <?php 
     $parse_uri = explode( 'wp-content', $_SERVER['SCRIPT_FILENAME'] );
     require_once( $parse_uri[0] . 'wp-load.php' );
+    if (!function_exists('is_plugin_active')) {
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+       }
     //
     function get_data_theme_contact_count($keyz){
         global $wpdb;
@@ -46,13 +49,12 @@
         return (int)($results[0]["COUNT(id)"]);
     }
     $object = new stdClass();
-    if(true){//[todo]
-        $id_user=6;
-        $permisstion_type="editor";
-    // if(is_user_logged_in()){
-    //     $user = wp_get_current_user();
-    //     $permisstion_type=$user->roles[0];
-    //
+if(is_plugin_active('zsharevn-landing-page/index.php')){
+
+    if(is_user_logged_in()){
+        $user = wp_get_current_user();
+        $permisstion_type=$user->roles[0];
+    
         $contact_count_now=count_contact();
         $contact_count_pre=get_data_theme_contact_count('contact_count_plugin');
         if(check_notify_ok($contact_count_pre,$contact_count_now,'contact_count_plugin')){
@@ -63,5 +65,6 @@
             $object->contact_count_now=0;
         }
     }
+}
     send($object);
 ?>
