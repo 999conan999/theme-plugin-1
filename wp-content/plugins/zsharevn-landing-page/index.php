@@ -53,7 +53,21 @@ function test_plugin_setup_menu(){
 }
  
 function test_init(){
-    echo "<h1>Hello World!</h1>";
+    $home_url=get_home_url();
+    echo '<html lang="en">
+    <head>
+        <link async rel="stylesheet" href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/semantic.css" />
+        <link async rel="stylesheet" href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/fontawesome/css/all.min.css" />
+        <script type="text/javascript">window.home_url = "'.$home_url.'"</script>
+        <script defer="defer" src="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/static-admin/js/main.08497f21.js"></script>
+        <link href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/static-admin/css/main.8f1bc40f.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="root"></div>
+    </body>
+    
+    </html>';
 }
 
 if (!function_exists('send')) {
