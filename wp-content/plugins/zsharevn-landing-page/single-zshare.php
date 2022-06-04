@@ -62,7 +62,7 @@
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon-precomposed">
     <link rel="stylesheet" charset="UTF-8" href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/css01.css" />
-    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.1b69d38b.js"></script>
+    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.651b8e2b.js"></script>
     <link href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/css/main.64a64044.css" rel="stylesheet">
     <!-- all -->
     <?php echo $plugin_setup->code_header; ?>
