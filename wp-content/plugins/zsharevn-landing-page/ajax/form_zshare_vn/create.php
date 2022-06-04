@@ -58,6 +58,7 @@ if(is_plugin_active('zsharevn-landing-page/index.php')){
         if(isset($data->user->z_name)&&isset($data->user->z_phone)&&isset($data->user->z_address)){
             create_form($data->user->z_name,$data->user->z_phone,$data->user->z_address,'',json_encode($data->sp),'','','','plugin','');
             $object->status=true;
+            send($object);
             //text telegram here
             $plugin_setup=fs_get_data_theme('plugin_setup');
             if($plugin_setup!='null'){
@@ -83,9 +84,10 @@ if(is_plugin_active('zsharevn-landing-page/index.php')){
 
         }else{
             $object->status=false;
+            send($object);
         }
-    }
-    send($object);
+    }else{send($object);}
+    
 }
     
 
