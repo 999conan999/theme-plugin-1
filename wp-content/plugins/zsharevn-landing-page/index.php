@@ -25,9 +25,9 @@ function create_post_type_zshare(){
         'taxonomies' => array(), //Các taxonomy được phép sử dụng để phân loại nội dung
         'hierarchical' => true, //Cho phép phân cấp, nếu là false thì post type này giống như Post, true thì giống như Page
         'public' => true, //Kích hoạt post type
-        'show_ui' => false, //Hiển thị khung quản trị như Post/Page
+        'show_ui' => true, //Hiển thị khung quản trị như Post/Page
         'can_export' => true, //Có thể export nội dung bằng Tools -> Export
-        'exclude_from_search' => true, //Loại bỏ khỏi kết quả tìm kiếm
+        'exclude_from_search' => false, //Loại bỏ khỏi kết quả tìm kiếm
         'publicly_queryable' => true, //Hiển thị các tham số trong query, phải đặt true
         // 'capability_type' => 'page' //
     );
