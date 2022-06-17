@@ -31,7 +31,9 @@
     $metaA=json_decode(get_post_meta($id,'metaA', true));
     $current_url=get_permalink($id);
     $home_url= get_home_url();
-    $content= $obj->post_content;
+    $content= $obj->post_content;//$metaA->canonical
+    $canonical=$current_url;
+    if($metaA->canonical!="") $canonical=$metaA->canonical;
 ?>
 
 
@@ -57,7 +59,7 @@
     <meta property="og:locale" content="vi_VN">
     <meta name="copyright" content="<?php echo $plugin_setup->website_name; ?>">
     <meta name="author" content="<?php echo $plugin_setup->website_name; ?>">
-    <link rel="canonical" href="<?php echo $current_url; ?>">
+    <link rel="canonical" href="<?php echo $canonical; ?>">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="shortcut icon" type="image/x-icon">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon-precomposed">
@@ -93,7 +95,6 @@
         sp:<?php echo json_encode($metaA->data_lading_page->sp); ?>,
       };
       window.home_url="<?php echo $home_url; ?>";
-      console.log(window.data);
     </script>
   </head>
   <body>
