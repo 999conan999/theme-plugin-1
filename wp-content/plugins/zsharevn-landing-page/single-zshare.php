@@ -62,7 +62,7 @@
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon-precomposed">
     <link rel="stylesheet" charset="UTF-8" href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/css01.css" />
-    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.0de0f6f1.js"></script>
+    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.3e028a12.js"></script>
     <link href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/css/main.12933ff6.css" rel="stylesheet">
     <!-- all -->
     <?php echo $plugin_setup->code_header; ?>
@@ -70,6 +70,10 @@
     <style type="text/css">
        <?php echo $plugin_setup->css_code; ?>
        <?php echo $metaA->code_css; ?>
+       body{
+        display: flex;
+        flex-direction: column-reverse;
+       }
     </style>
     <script type="text/javascript">
       window.data={
@@ -99,14 +103,14 @@
 
     <?php  //var_dump($plugin_setup); ?>
     <?php //var_dump(($metaA)); ?>
-    <div id="root">
-      <?php echo $metaA->server_render; ?>
-    </div>
     <div class="container">
       <div class="content">
           <?php echo $content; ?>
       </div>
     </div>
+    <div id="root">
+      <?php echo $metaA->server_render; ?>
+    </div>    
     <!-- all -->
     <?php echo $plugin_setup->code_footer; ?>
     <?php echo $metaA->code_footer; ?>
