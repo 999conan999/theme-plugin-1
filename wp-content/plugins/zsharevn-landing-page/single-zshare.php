@@ -77,6 +77,7 @@
         flex-direction: column-reverse;
        }
     </style>
+    <?php echo $metaA->schema_seo_result; ?>
     <script type="text/javascript">
       window.data={
         title_page:'<?php echo $metaA->data_lading_page->title_page; ?>',
