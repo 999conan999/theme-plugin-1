@@ -37,10 +37,10 @@ function get_infor_post($id){
     return($result);
 }
 $object= new stdClass();
-// if(is_user_logged_in()){
+// if(is_user_logged_in()==false){
 //     $id_user=get_current_user_id();
 //     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
+//     $permisstion_type="administrator";
 if(true){//[todo]
     $id_user=6;
     $permisstion_type="editor";

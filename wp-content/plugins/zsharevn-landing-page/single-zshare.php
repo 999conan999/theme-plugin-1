@@ -64,8 +64,8 @@
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon-precomposed">
     <link rel="stylesheet" charset="UTF-8" href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/css01.css" />
-    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.3e028a12.js"></script>
-    <link href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/css/main.12933ff6.css" rel="stylesheet">
+    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.3111e12f.js"></script>
+    <link href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/css/main.05423424.css" rel="stylesheet">
     <!-- all -->
     <?php echo $plugin_setup->code_header; ?>
     <?php echo $metaA->code_header; ?>
@@ -94,7 +94,14 @@
         },
         narbar:<?php echo json_encode($metaA->data_lading_page->narbar); ?>,
         sp:<?php echo json_encode($metaA->data_lading_page->sp); ?>,
+        mr:{
+          fb:'<?php echo $metaA->data_lading_page->mr->fb?>',
+          zl:'<?php echo $metaA->data_lading_page->mr->zl?>',
+          dt:'<?php echo $metaA->data_lading_page->mr->dt?>',
+          ds:'<?php echo $metaA->data_lading_page->mr->ds?>'
+        }
       };
+      window.lock=false;
       window.home_url="<?php echo $home_url; ?>";
     </script>
   </head>

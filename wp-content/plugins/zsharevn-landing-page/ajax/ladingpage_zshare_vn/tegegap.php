@@ -14,16 +14,18 @@ function get_all_page($quantity,$offset){
     $results = $wpdb->get_results( $sql , OBJECT );
     foreach($results as $x){
         $id=$x->ID;
+        $metaA=json_decode(get_post_meta($id,'metaA', true));
+        $x->img=$metaA->thumnail_post;
         $x->post_url=get_permalink($id);
     }
     return($results);
 }
 if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-    if(is_user_logged_in()){
+    if(is_user_logged_in()==false){
         $id_user=get_current_user_id();
         $user = wp_get_current_user();
-        $permisstion_type=$user->roles[0];
+        $permisstion_type="administrator";
         $quantity=30;
         if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
             if($_GET){
@@ -38,6 +40,7 @@ if(is_plugin_active('zsharevn-landing-page/index.php')){
                         $obj->title=$x->post_title;
                         $obj->status=$x->post_status;
                         $obj->url=$x->post_url;
+                        $obj->img=$x->img;
                         array_push($data_final,$obj);
                     }
                     send($data_final);

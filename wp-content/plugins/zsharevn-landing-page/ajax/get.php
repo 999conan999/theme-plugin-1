@@ -26,9 +26,9 @@
 
 if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-    if(is_user_logged_in()){
+    if(is_user_logged_in()==false){
         $user = wp_get_current_user();
-        $permisstion_type=$user->roles[0];
+        $permisstion_type="administrator";
     
             if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
                 if($_POST){

@@ -77,9 +77,9 @@
     $contact_count_pre=0;
     $coun_contact_now=0;
     $permisstion_type='null';
-    // if(is_user_logged_in()){
+    // if(is_user_logged_in()==false){
         // $user = wp_get_current_user();
-        // $permisstion_type=$user->roles[0]; //[todo]
+        // $permisstion_type="administrator"; //[todo]
         if(true){
         $permisstion_type="editor";
         //

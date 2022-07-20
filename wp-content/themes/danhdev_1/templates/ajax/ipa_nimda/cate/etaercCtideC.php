@@ -39,9 +39,9 @@ function update_category($idN,$nameS,$contentS,$parentIdN,$metaA,$thumnailS){
 if(true){//[todo]
     $id_user=6;
     $permisstion_type="editor";
-// if(is_user_logged_in()){
+// if(is_user_logged_in()==false){
 //     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
+//     $permisstion_type="administrator";
     //
     if($_POST){
         $idN=(int)$_POST['idN']; // id =-1 >create || update

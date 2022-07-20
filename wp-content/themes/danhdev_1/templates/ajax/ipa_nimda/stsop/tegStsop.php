@@ -110,10 +110,10 @@ function get_posts_by_category_id_user($user_id,$id_category,$quantity,$offset){
 // var_dump(get_posts_by_category_id_user(3,4,25,0));
 
 
-// if(is_user_logged_in()){
+// if(is_user_logged_in()==false){
 //     $id_user=get_current_user_id();
 //     $user = wp_get_current_user();
-//     $permisstion_type=$user->roles[0];
+//     $permisstion_type="administrator";
 //     $quantity=25;
 //     $list_post_org=array();
  //[todo]
