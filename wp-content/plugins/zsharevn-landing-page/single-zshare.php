@@ -170,7 +170,7 @@
           <?php echo $content; ?>
       </div>
     </div>
-    <div id="rootz">
+    <div id="root">
       <div class="cfir"><?php echo $plugin_setup->data_plugin->header_title; ?></div>
       <div class="container">
             <div class="row">
