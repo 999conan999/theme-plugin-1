@@ -8,9 +8,9 @@ function delete_category($id){
 if(true){//[todo]
     $id_user=6;
     $permisstion_type="editor";
-// if(is_user_logged_in()==false){
+// if(is_user_logged_in()){
 //     $user = wp_get_current_user();
-//     $permisstion_type="administrator";
+//     $permisstion_type=$user->roles[0];
     if($_POST){
         $idN=(int)$_POST['idN'];
         if($permisstion_type=="administrator"||$permisstion_type=="editor"){// remove full permisstion

@@ -17,10 +17,10 @@ function delete_contact_by_id($id){// search phone or email ~~ '' => get all
 if(is_plugin_active('zsharevn-landing-page/index.php')){
      $object = new stdClass();
      $object->status=false;
-     if(is_user_logged_in()==false){
+     if(is_user_logged_in()){
          $id_user=get_current_user_id();
          $user = wp_get_current_user();
-         $permisstion_type="administrator";
+         $permisstion_type=$user->roles[0];
           if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"){
                          
                if(isset($_POST['id'])){

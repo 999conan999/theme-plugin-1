@@ -38,7 +38,7 @@ function get_all_categorys(){
 $object= new stdClass();
 
 if(true){// [todo]
-// if(is_user_logged_in()==false){
+// if(is_user_logged_in()){
     $object->categorys_list=get_all_categorys();
     $object->tags_all=get_all_tags();
     send($object);

@@ -65,9 +65,9 @@ function check_keyz_is_create($keyz){
 
 if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-    if(is_user_logged_in()==false){
+    if(is_user_logged_in()){
         $user = wp_get_current_user();
-        $permisstion_type="administrator";
+        $permisstion_type=$user->roles[0];
 
         if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
             if($_POST){

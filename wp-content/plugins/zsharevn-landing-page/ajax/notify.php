@@ -51,9 +51,9 @@
     $object = new stdClass();
 if(is_plugin_active('zsharevn-landing-page/index.php')){
 
-    if(is_user_logged_in()==false){
+    if(is_user_logged_in()){
         $user = wp_get_current_user();
-        $permisstion_type="administrator";
+        $permisstion_type=$user->roles[0];
     
         $contact_count_now=count_contact();
         $contact_count_pre=get_data_theme_contact_count('contact_count_plugin');

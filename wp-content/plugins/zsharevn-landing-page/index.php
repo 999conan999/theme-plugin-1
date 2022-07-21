@@ -59,8 +59,8 @@ function test_init(){
         <link async rel="stylesheet" href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/semantic.css" />
         <link async rel="stylesheet" href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/fontawesome/css/all.min.css" />
         <script type="text/javascript">window.home_url = "'.$home_url.'"</script>
-        <script defer="defer" src="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/static-admin/js/main.cb46fd1e.js"></script>
-        <link href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/static-admin/css/main.01b1bfce.css" rel="stylesheet">
+        <script defer="defer" src="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/static-admin/js/main.4d5396d8.js"></script>
+        <link href="'.$home_url.'/wp-content/plugins/zsharevn-landing-page/static-admin/css/main.df8c9994.css" rel="stylesheet">
     </head>
     
     <body>

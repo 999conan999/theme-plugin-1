@@ -23,10 +23,10 @@
 if(true){//[todo]
     $id_user=6;
     $permisstion_type="editor";
-// if(is_user_logged_in()==false){
+// if(is_user_logged_in()){
 //     $id_user=get_current_user_id();
 //     $user = wp_get_current_user();
-//     $permisstion_type="administrator";
+//     $permisstion_type=$user->roles[0];
 
     if($permisstion_type=="administrator"||$permisstion_type=="editor"||$permisstion_type=="author"||$permisstion_type=="contributor"){
         $quantity=30;
