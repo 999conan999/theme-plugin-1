@@ -70,8 +70,8 @@
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon">
     <link href="<?php echo $plugin_setup->icon_url_192; ?>" rel="apple-touch-icon-precomposed">
     <link rel="stylesheet" charset="UTF-8" href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/css01.css" />
-    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.3111e12f.js"></script>
-    <link href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/css/main.05423424.css" rel="stylesheet">
+    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/js/main.995b1559.js"></script>
+    <link href="<?php echo $home_url; ?>/wp-content/plugins/zsharevn-landing-page/static/css/main.b7d1d42d.css" rel="stylesheet">
     <!-- all -->
     <?php echo $plugin_setup->code_header; ?>
     <?php echo $metaA->code_header; ?>
@@ -217,7 +217,7 @@
                         <div class="slider-z">
                            <?php 
                               foreach ($vl_sp->hinh_anh as &$value) { ?>
-                                 <p style="text-align: center; color: rgb(253, 253, 253); font-size: 12px; margin-bottom: 0px; height: 21px;"><?php echo $value->message; ?>
+                                 <p style="text-align: center; color: transparent; font-size: 12px; margin-bottom: 0px; height: 21px;"><?php echo $value->message; ?>
                                  - <?php echo $value->product_attributes; ?>
                                  </p>
                            <?php 

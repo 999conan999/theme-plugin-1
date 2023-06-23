@@ -1,59 +1,99 @@
 <?php
-    $data_setup= fs_get_data_theme('data_setup');
     require_once(get_stylesheet_directory().'/templates/archive/control_archive.php');
 ?>
-<!DOCTYPE html>
-<html lang="vi" class=" w-mod-ix">
+ <!DOCTYPE html>
+<html lang="vi" >
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta property="og:type" content="article">
-    <meta name="GENERATOR" content="<?php echo $data_setup->website_name; ?>">
-    <meta name="copyright" content="<?php echo $data_setup->website_name; ?>">
-    <title><?php echo  $data_category->category_name; ?></title>
-    <meta name="description" content="<?php echo  $data_category->descriptions; ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <link rel="canonical" href="<?php echo  $current_url; ?>">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><?php echo $post_infor->contents->title; ?> | <?php echo $home_name; ?> </title>
+    <meta name="description" content="<?php echo $post_infor->contents->short_des; ?>">
+    <link rel="canonical" href="<?php echo  $current_url;?>">
     <meta property="og:locale" content="vi_VN">
-    <meta property="og:title" content="<?php echo  $data_category->category_name; ?>">
-    <meta property="og:description" content="<?php echo  $data_category->descriptions; ?>">
-    <meta property="og:url" content="<?php echo  $current_url; ?>">
-    <meta property="og:site_name" content="<?php echo $data_setup->website_name; ?>">
-    <meta property="og:image" content="<?php echo $thumnail_url; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?php echo $post_infor->contents->title; ?>">
+    <meta property="og:description" content="<?php echo $post_infor->contents->short_des; ?>">
+    <meta property="og:url" content="<?php echo  $current_url;?>">
+    <meta property="og:site_name" content="<?php echo $home_name; ?>">
+    <meta property="og:image" content="<?php echo $post_infor->phu->thumnail; ?>">
     <meta property="og:image:width" content="640">
     <meta property="og:image:height" content="360">
     <meta name="twitter:card" content="summary_large_image">
-    <style type="text/css"><?php require_once(get_stylesheet_directory().'/templates/assets/css/style_home.php'); ?></style>
-    <link rel="icon" href="<?php echo $data_setup->icon_url_32; ?>" sizes="32x32">
-    <link rel="icon" href="<?php echo $data_setup->icon_url_192; ?>" sizes="192x192">
-    <link rel="apple-touch-icon" href="<?php echo $data_setup->icon_url_180; ?>">
-    <meta name="msapplication-TileImage" content="<?php echo $data_setup->icon_url_180; ?>">
-    <?php  echo $metaA->schema_seo_result ;?>
-    <style type="text/css"><?php echo $data_setup->css_code ;?> </style>
-    <style type="text/css"><?php echo $data_setup->add_code_cetegorys->css_code ;?> </style>
-    <?php echo $data_setup->code_header ;?>
-    <?php echo $data_setup->add_code_cetegorys->code_header ;?>
-    <?php echo $metaA->code_header;?>
-</head>
-<body style="background-color: tan;" class="home page-template page-template-home-page page-template-home-page-php page page-id-2013 light-mode wp-schema-pro-2.7.2 jkit-color-scheme elementor-default elementor-kit-1073 elementor-page elementor-page-2013">
-    <?php echo $data_setup->code_body ;?>
-    <?php echo $data_setup->add_code_cetegorys->code_body ;?>
-    <?php echo $metaA->code_body;?>
-    <?php require_once(get_stylesheet_directory().'/templates/header/header.php'); ?>
-    <?php 
-        if($template_selected=='0'){
-            require_once(get_stylesheet_directory().'/templates/archive/archive_00.php');
-        }elseif($template_selected=='1'){
-            require_once(get_stylesheet_directory().'/templates/archive/archive_01.php');
-            echo $pageing;
-        }elseif($template_selected=='2' && isset($metaA->treeData)){
-            require_once(get_stylesheet_directory().'/templates/archive/archive_02.php');
+    <link rel="icon" href="<?php echo $common->header->icon_mini_url; ?>" sizes="192x192">
+    <link rel="apple-touch-icon" href="<?php echo $common->header->icon_mini_url; ?>">
+    <meta name="msapplication-TileImage" content="<?php echo $common->header->icon_mini_url; ?>">
+ <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","item":{"@type":"Thing","url":"<?php echo $home_url; ?>","@id":"<?php echo $home_url; ?>#1","name":"Trang chủ"},"position":1},{"@type":"ListItem","item":{"@type":"Thing","url":"<?php echo $post_infor->phu->category_link; ?>","@id":"<?php echo $post_infor->phu->category_link; ?>#2","name":"<?php echo $post_infor->phu->category_name; ?>"},"position":2}]} 
+</script>
+<?php if($post_infor->phu->show_slide==true){?>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Product",
+        "name": "<?php echo $post_infor->contents->title; ?>",
+        "image": "<?php echo $post_infor->phu->thumnail; ?>",
+        "description": "<?php echo $post_infor->contents->short_des; ?>",
+        "url": "<?php echo  $current_url;?>",
+        "sku": "BK<?php echo  $id;?>",
+        "brand": {
+            "@type": "Brand",
+            "name": "OEM"
+        },
+        "mpn": "AB<?php echo  $id;?>",
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "<?php echo $post_infor->phu->rating; ?>",
+            "bestRating": "5"
+            },
+            "author": {
+            "@type": "Person",
+            "name": "<?php echo $home_name; ?>"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "<?php echo $post_infor->phu->rating; ?>",
+            "reviewCount": "<?php echo rand(100,999); ?>"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "<?php echo  $current_url;?>",
+            "priceCurrency": "VND",
+            "price": "<?php echo $post_infor->contents->price_ins; ?>",
+            "priceValidUntil": "<?php echo date('Y'); ?>-30-12",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+            "@type": "Organization",
+            "name": "<?php echo $home_name; ?>"
+            }
         }
+    }
+    </script>
+<?php }?>
+    <?php
+        // gg code header here
+        echo $common->code_gg->code_header;
     ?>
-    <?php require_once(get_stylesheet_directory().'/templates/footer/footer.php'); ?>
-    <?php echo $data_setup->add_code_cetegorys->code_footer ;?>
-    <?php echo $metaA->code_footer;?>
-</body>
 
+    <script type="text/javascript">
+      window.data=<?php echo json_encode($data) ?>
+    </script>
+    <script defer="defer" src="<?php echo $home_url; ?>/wp-content/themes/danhdev_1/templates/single/static/js/main.5dad9bad.js"></script>
+    <link href="<?php echo $home_url; ?>/wp-content/themes/danhdev_1/templates/single/static/css/main.d506b0c3.css" rel="stylesheet">
+</head>
+<body  style="background-color: #deb887;">
+    <?php
+        // gg code body here
+        echo $common->code_gg->code_body;
+    ?>
+    <div id="root">
+        <?php  require_once(get_stylesheet_directory().'/templates/header/header.php'); ?>
+        <?php  require_once(get_stylesheet_directory().'/templates/single/server_render_single.php'); ?>
+        <?php require_once(get_stylesheet_directory().'/templates/footer/footer.php'); ?>
+    </div>
+</body>
 </html>

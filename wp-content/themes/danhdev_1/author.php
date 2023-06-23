@@ -1,9 +1,1 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="robots" content="noindex" />
-</head>
-<body>
-<h1>>>> Go Back <a href="<?php echo get_home_url() ?>" style=" color: #3f51b5; "><?php echo get_home_url() ?></a></h1>
-</body>
-</html>
+<?php require_once(get_stylesheet_directory().'/templates/404/404.php'); ?>

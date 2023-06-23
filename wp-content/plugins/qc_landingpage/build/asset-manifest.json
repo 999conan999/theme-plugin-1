@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wp-content/plugins/qc_landingpage/build/static/css/main.dcf1829f.css",
+    "main.js": "/wp-content/plugins/qc_landingpage/build/static/js/main.1aa066be.js",
+    "static/js/787.ea4dbade.chunk.js": "/wp-content/plugins/qc_landingpage/build/static/js/787.ea4dbade.chunk.js",
+    "index.html": "/wp-content/plugins/qc_landingpage/build/index.html",
+    "main.dcf1829f.css.map": "/wp-content/plugins/qc_landingpage/build/static/css/main.dcf1829f.css.map",
+    "main.1aa066be.js.map": "/wp-content/plugins/qc_landingpage/build/static/js/main.1aa066be.js.map",
+    "787.ea4dbade.chunk.js.map": "/wp-content/plugins/qc_landingpage/build/static/js/787.ea4dbade.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcf1829f.css",
+    "static/js/main.1aa066be.js"
+  ]
+}

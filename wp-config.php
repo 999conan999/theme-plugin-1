@@ -20,13 +20,13 @@
 
 // ** Thiết lập MySQL - Bạn có thể lấy các thông tin này từ host/server ** //
 /** Tên database MySQL */
-define( 'DB_NAME', 'vtd' );
+define( 'DB_NAME', 'cofa' );
 
 /** Username của database */
-define( 'DB_USER', 'vtd' );
+define( 'DB_USER', 'cofa' );
 
 /** Mật khẩu của database */
-define( 'DB_PASSWORD', '123' );
+define( 'DB_PASSWORD', '123456' );
 
 /** Hostname của database */
 define( 'DB_HOST', 'localhost' );
@@ -66,7 +66,8 @@ define( 'NONCE_SALT',       'DT?xoReVKwi}|i; ejtc@i/qXy=:j,X!e7ljo/paG[Z66ERD,n&
  * Chỉ sử dụng số, ký tự và dấu gạch dưới!
  */
 $table_prefix = 'wp_';
-
+define('AUTOSAVE_INTERVAL', 300); // seconds
+define('WP_POST_REVISIONS', false);
 /**
  * Dành cho developer: Chế độ debug.
  *
