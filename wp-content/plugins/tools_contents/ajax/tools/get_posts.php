@@ -16,10 +16,10 @@ function get_posts_sp_main($id){
     send($results);
 }
 
-// if(is_user_logged_in()){
+if(is_user_logged_in()){
     $id=$_GET['id'];
     get_posts_sp_main($id);  
-// }
+}
 
  
  

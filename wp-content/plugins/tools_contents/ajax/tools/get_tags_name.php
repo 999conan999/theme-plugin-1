@@ -14,7 +14,6 @@
         send($results);
     }
 
-    // if(is_user_logged_in()){
- 
+    if(is_user_logged_in()){
         get_tags_name();
-    // }
+    }
