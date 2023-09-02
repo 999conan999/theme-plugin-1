@@ -53,20 +53,6 @@ function create_post($id,$json_data,$thumnail,$title,$price,$quantity_sold,$key_
 
 if(is_user_logged_in()){
     if($_POST){
-        // $id=(int)$_POST['id']; // id =-1 >create || update
-        // $category_id=(int)$_POST['category_id'];
-        // $json_data=$_POST['json_data'];     
-        // $thumnail=$_POST['thumnail'];     
-        // $title=$_POST['title'];     
-        // $price=$_POST['price'];     
-        // $quantity_sold=$_POST['quantity_sold'];     
-        // $key_word=$_POST['key_word'];     
-        // $related_keyword=$_POST['related_keyword'];     
-        // $status=$_POST['status'];     
-        // $is_best_seller=$_POST['is_best_seller'];     
-        // $type=$_POST['type'];     
-        // $short_des=$_POST['short_des'];     
-        // create_post($id,$json_data,$thumnail,$title,$price,$quantity_sold,$key_word,$related_keyword,$status,$is_best_seller,$type,$short_des,$category_id);
         $data=stripslashes($_POST['data']); 
         $data=json_decode($data);
         foreach($data as $x){
