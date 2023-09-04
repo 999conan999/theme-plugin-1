@@ -6,7 +6,7 @@
     <script type="text/javascript">window.url = "<?php echo $home_url;?>"</script>
     <script defer="defer" src="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/static/js/main.f765f8b4.js"></script>
     <script defer="defer" src="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/tinymce/tinymce.min.js"></script>
-    <link href="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/static/css/main.a5832f3a.css" rel="stylesheet">
+    <link href="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/static/css/main.810e4e28.css" rel="stylesheet">
 </head>
 
 <body><noscript>You need to enable JavaScript to run this app.</noscript>
