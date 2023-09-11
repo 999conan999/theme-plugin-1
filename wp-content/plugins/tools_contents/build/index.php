@@ -4,7 +4,7 @@
 <head>
     <link async rel="stylesheet" href="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/fontawesome/css/all.min.css" />
     <script type="text/javascript">window.url = "<?php echo $home_url;?>"</script>
-    <script defer="defer" src="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/static/js/main.df188b44.js"></script>
+    <script defer="defer" src="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/static/js/main.87970a82.js"></script>
     <script defer="defer" src="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/tinymce/tinymce.min.js"></script>
     <link href="<?php echo $home_url;?>/wp-content/plugins/tools_contents/build/static/css/main.810e4e28.css" rel="stylesheet">
 </head>
